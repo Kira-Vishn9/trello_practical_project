@@ -1,18 +1,21 @@
-import * as chai from 'chai';
-let assert = chai.assert;
-let should = chai.should();
-let expectChai = chai.expect;
-const LoginPage = require("../po/login.page");
+// import * as chai from 'chai';
+// let assert = chai.assert;
+// let should = chai.should();
+// let expectChai = chai.expect;
+// const LoginPage = require("../po/login.page");
 //import { login } from '../po/login.page';
+import { expect } from 'chai';
+import LoginPage from '../po/login.page';
+import { browser } from '@wdio/globals';
 
 describe("Trello Suite", async () => {
     beforeEach(async () => {
         await browser.url("https://trello.com/home");
     });
 
-    // afterEach(async () => {
-    //     await browser.deleteCookies();
-    // });
+    afterEach(async () => {
+        await browser.deleteCookies();
+    });
 
     // it("Logging in with an invalid email", async () => {
     //     const logInButton = await $('//div[contains(@class, "jnMZCI")]/a[text()="Log in"]');
